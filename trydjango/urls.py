@@ -27,9 +27,9 @@ urlpatterns = [
     path('about/', about_view),
     path('social/', social_view),
     path('admin/', admin.site.urls),
-    # path('products/', product_detail_view),
-    # path('create/', product_create_view),
-    # path('inital/', render_initial_data),
+    path('products/', product_detail_view),
+    path('create/', product_create_view),
+    path('inital/', render_initial_data),
     path('products/<int:id>', dynamic_lookup_view, name='product'),
     path('products/<int:id>/delete/', product_delete_view, name='product_delete'),
 
