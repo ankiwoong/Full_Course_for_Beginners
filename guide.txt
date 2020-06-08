@@ -1,6 +1,6 @@
 1. Create a New App named Blog
 
-2. Add 'Blog' to your Django Project
+2. Add 'Blog' to  your Django Project
 
 3. Create a Model named Article
 
@@ -15,3 +15,15 @@
 8. Save a nemw Article objcet in the Admin
 
 Confused? Start here : https://kirr.co/9ypik6
+
+Links
+
+1. joincfe.com/from-zero
+
+2. joincfe.com/github
+
+3. githoub.com/codingforentrepreneurs/Try-Django
+
+4. djangoproject.com
+
+5. stackoverflow.com
