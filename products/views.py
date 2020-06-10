@@ -60,3 +60,9 @@ def render_inital_data(request):
         form.save()
     context = {"form": form}
     return render(request, "products/product_create.html", context)
+
+
+def dynamic_lookup_view(request, id):
+    obj = Product.objects.get(id=1)
+    context = {"object": obj}
+    return render(request, "products/product_detail.html", context)  # In App Template
