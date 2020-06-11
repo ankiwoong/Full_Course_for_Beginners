@@ -8,9 +8,24 @@ from django.views.generic import (
     DeleteView,
 )
 
+from .forms import ArticleModelForm
 from .models import Article
 
 # Create your views here.
+class ArticleCreateView(CreateView):
+    template_name = "articles/article_create.html"
+    form_class = ArticleModelForm
+    queryset = Article.objects.all()
+    # success_url = "/"
+
+    def form_valid(self, form):
+        print(form.cleaned_data)
+        return super().form_valid(form)
+
+    # def get_success_url(self):
+    #     return "/"
+
+
 class ArticleListView(ListView):
     template_name = "articles/article_list.html"
     queryset = Article.objects.all()  # blog/<modelname>_list.html
@@ -23,3 +38,18 @@ class ArticleDetailView(DetailView):
     def get_object(self):
         id_ = self.kwargs.get("id")
         return get_object_or_404(Article, id=id_)
+
+
+class ArticleUpdateView(UpdateView):
+    template_name = "articles/article_create.html"
+    form_class = ArticleModelForm
+    queryset = Article.objects.all()
+    # success_url = "/"
+
+    def get_object(self):
+        id_ = self.kwargs.get("id")
+        return get_object_or_404(Article, id=id_)
+
+    def form_valid(self, form):
+        print(form.cleaned_data)
+        return super().form_valid(form)
